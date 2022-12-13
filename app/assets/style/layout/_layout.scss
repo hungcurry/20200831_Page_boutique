@@ -1,0 +1,1002 @@
+
+:focus {
+  outline: 0;
+}
+* {
+  // outline: 0.1rem solid red;
+}
+.vspc * {
+  font-family: "Noto Sans TC" , -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  position: relative;
+  box-sizing: border-box;
+}
+.vspc{
+  overflow: hidden;
+  .main{
+    width: 100%;
+    max-width: 140rem;
+    margin: auto;
+  }
+  // 排版用div
+  .outer{
+    width:auto;
+  }
+}
+/*-------------------------*/
+/* topMain
+---------------------------*/
+.topMain {
+  max-width: 100%;
+  height: 0rem;
+  padding-bottom: 110%;
+  margin: auto;
+  background-image: url('../../assets/images/top-375.jpg');
+  background-position: center center;
+  background-size: cover;
+  @media screen and (min-width: $mq768) {
+    background-image: url('../../assets/images/top-768.jpg');
+  }
+  @media screen and (min-width: $mq769) {
+    background-image: url('../../assets/images/top.jpg');
+    background-position-x: center; // 45%
+  }
+  @media screen and (min-width: $mq1024) {
+    padding-bottom: 0;
+    max-width: 192rem;
+    height: 63.4rem;
+  }
+/* logo
+-------------------*/
+  .udnLOGO {
+    display: block;
+    z-index: 99;
+    position: absolute;
+    width: calc(139 / 640 * 100%);
+    left: 2%;
+    top: 1.5%;
+    @media screen and (min-width: $mq640) {
+      width: calc(139 / 1200 * 100%);
+      left: calc(40 / 1200 * 100%);
+      top: calc(15 / 1200 * 100%);
+    }
+    .udnLogo__img {
+      display: block;
+      width: 100%;
+      height: 0;
+      background-size: 100% auto;
+      padding-bottom: calc(293 / 797 * 100%);
+      background-image: url('https://img.udn.com/art/2019_logo/images/new_udnlogo_01.svg');
+    }
+  }
+  .container{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  .row{
+    height: 100%;
+    &::before{
+      content: "";
+      position: absolute;
+      top:0;
+      left: 1rem;
+      width: 0.2rem;
+      height: 94%;
+      background-color: white;
+      z-index: 11;
+      display: none;
+      @media screen and (min-width: $mq1200) {
+        display: block;
+      }
+    }
+  }
+}
+/* title
+-------------------*/
+// 圖片方式
+.txtBox{
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  @media screen and (min-width: $mq375) {
+    top: -3%; // 2.5%
+  }
+  @media screen and (min-width: $mq411) {
+    top: 1%; // 6.5%
+  }
+  @media screen and (min-width: $mq414) {
+    top: 1%; // 5.5%
+  }
+  @media screen and (min-width: $mq768) {
+    top: -4.5%; // -4.5%
+  }
+  @media screen and (min-width: $mq1024) {
+    top: -10.5%; // -10.5%
+  }
+  @media screen and (min-width: $mq1200) {
+    top: 0%;
+  }
+  //主標圖
+  &__img{
+    margin: auto;
+    width: 100%;
+    @media screen and (min-width: $mq1024) {
+      transform: translate(-2.5rem , 5rem);
+    }
+    @media screen and (min-width: $mq1200) {
+      transform: translate(-6.5rem , 5rem);
+    }
+    // 手機
+    &.sm-show{
+      display: block;
+      @media screen and (min-width: $mq768) {
+        display: none;
+      }
+    }
+    // 平板
+    &.md-show{
+      display: none;
+      @media screen and (min-width: $mq768) {
+        display: block;
+      }
+      @media screen and (min-width: $mq1200) {
+        display: none;
+      }
+    }
+    // 桌機
+    &.lg-show{
+      display: none;
+      @media screen and (min-width: $mq1200) {
+        width: auto;
+        display: block;
+      }
+    }
+  }
+  //裝飾
+  &__decoration{
+    width: 100%;
+    position: absolute;
+    bottom: -5rem;
+    right: 0;
+    @media screen and (min-width: $mq768) {
+
+    }
+    @media screen and (min-width: $mq1024) {
+      bottom: -4rem;
+    }
+  }
+  &__decoration__img{
+    width: 100% ;
+    display: inline-block;
+    text-align: center;
+    @media screen and (min-width: $mq768) {
+      transform: translateX(3%);
+    }
+    @media screen and (min-width: $mq1024) {
+      width: 90% ;
+      transform: translateX(8%);
+    }
+  }
+}
+// 手刻方式
+.txtBox{
+  &__group{
+    padding: 2.2rem 0rem;
+    padding-top: 3rem;
+    @media screen and (min-width: $mq768) {
+      padding-top: 6rem;
+    }
+    @media screen and (min-width: $mq1200) {
+  
+    }
+    &::before {
+      @include width( 100% , 100%);
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #0baabb;
+      opacity: 0.6;
+    }
+    &::after {
+      @include width( 110% , 110%);
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50% , -50%);
+      background-color: transparent;
+      border: 0.3rem solid $white;
+      z-index: 1;
+      @media screen and (min-width: $mq768) {
+        @include width( 100% , 100%);
+        top: 2.2rem;
+        left: 1.6rem;
+        transform: translate(0% , 0%);
+      }
+    }
+  }
+  &__mainTitle{
+    @include fontSize(8.85vw , 1);
+    color: $white;
+    letter-spacing: 0.3rem;
+    font-weight: 700;
+    z-index: 2;
+    @media screen and (min-width: $mq768) {
+  
+    }
+    @media screen and (min-width: $mq1200) {
+      @include fontSize(6.8rem , 1);
+    }
+    span{
+      display: inline-block;
+      letter-spacing: 0.1rem;
+      color: $text-primary;
+    }  
+  }
+  &__subTitle{
+    width: 70%;
+    border-top: 0.2rem solid $black;
+    padding-top: 1.2rem;
+    color: $white;
+    letter-spacing: 0.3rem;
+    z-index: 2;
+    @media screen and (min-width: $mq768) {
+      @include fontSize(3.4rem , 1.5);
+      width: 37.5rem;
+      padding-top: 2.2rem;
+    }
+  }
+  &__small{
+    letter-spacing: 0.25rem;
+    color: $text-fourthly;
+    text-transform: uppercase;
+    font-weight: 700;
+    z-index: 2;
+    @media screen and (min-width: $mq768) {
+      letter-spacing: 0.7rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+/*-------------------------*/
+/* 區塊section
+---------------------------*/
+.section{
+  background-color: $white ;
+  @media screen and (min-width: $mq1200) {
+    box-shadow: 0px 0.5rem 1.5rem rgba(0, 0, 0, 0.3) ;
+  }
+  // 區塊一
+  &.section01{
+    @media screen and (min-width: $mq768) {
+
+    }
+    @media screen and (min-width: $mq1200) {
+      margin-bottom: 20rem; // 25rem - 13.5rem = 11.5rem
+    }
+  }
+  // 區塊二
+  &.section02{
+    @media screen and (min-width: $mq768) {
+
+    }
+    @media screen and (min-width: $mq1200) {
+      padding-bottom: 9.3rem;
+      margin-bottom: 11.5rem;
+    }
+    // 偽元素外框
+    &:before{
+      @media screen and (min-width: $mq1200) {
+        content: "";
+        display: block;
+        width: 117%;
+        max-width: 165rem;
+        height: 100.5%;
+        position: absolute;
+        top: 2.8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $primary ;
+        z-index: -1;
+      }
+    }
+  }
+  // 區塊三
+  &.section03{
+    @media screen and (min-width: $mq768) {
+
+    }
+    @media screen and (min-width: $mq1200) {
+      background-color: transparent;
+      margin-bottom: 4rem;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.0) ;
+    }
+  }
+  // 區塊四
+  &.section04{
+    @media screen and (min-width: $mq768) {
+      margin-bottom: 3rem;
+    }
+    @media screen and (min-width: $mq1200) {
+      padding-top: 5rem;
+      margin-bottom: 7rem;
+    }
+    // 偽元素外框
+    &:before{
+      @media screen and (min-width: $mq1200) {
+        content: "";
+        display: block;
+        width: 117%;
+        max-width: 165rem;
+        height: 97%;
+        position: absolute;
+        top: 11rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $primary ;
+        z-index: -1;
+      }
+    }
+  }
+}
+/*-------------------------*/
+/* boxBlock
+---------------------------*/
+.boxBlock{
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  background-position: center 0rem;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  @media screen and (min-width: $mq1200) {
+    max-width: 192rem;
+    background-size: 128rem auto;
+  }
+// boxBlock01
+  &.boxBlock01{
+    @media screen and (min-width: $mq1200) {
+
+    }
+    &.P01{
+      background-image: url('../../assets/images/BOXM1-1_BG.png');
+      @media screen and (min-width: $mq480) {
+        background-image: none;
+      }
+      @media screen and (min-width: $mq1200) {
+        background-image: url('../../assets/images/BOXW1-1_BG.png');
+      }
+      // 手機圖片位置
+      .col-imgBox-2{
+        margin-top: 3%;
+        @media screen and (min-width: $mq768) {
+          margin-top: 0;
+        }
+      }
+    }
+    &.P02{
+      background-image: url('../../assets/images/BOXM1-2_BG.png');
+      @media screen and (min-width: $mq480) {
+        background-image: none;
+      }
+      @media screen and (min-width: $mq1200) {
+        background-image: url('../../assets/images/BOXW1-2_BG.png');
+      }
+      // 手機圖片位置
+      .col-imgBox-2{
+        margin-top: 4.9%;
+        @media screen and (min-width: $mq768) {
+          margin-top: 0;
+        }
+      }
+    }
+    &.P03{
+      background-image: url('../../assets/images/BOXM1-3_BG.png');
+      @media screen and (min-width: $mq480) {
+        background-image: none;
+      }
+      @media screen and (min-width: $mq1200) {
+        background-image: url('../../assets/images/BOXW1-3_BG.png');
+      }
+      // 手機圖片位置
+      .col-imgBox-2{
+        margin-top: 6%;
+        @media screen and (min-width: $mq768) {
+          margin-top: 0;
+        }
+      }
+    }
+    &.P04{
+      background-image: url('../../assets/images/BOXM1-4_BG.png');
+      @media screen and (min-width: $mq480) {
+        background-image: none;
+      }
+      @media screen and (min-width: $mq1200) {
+        background-image: url('../../assets/images/BOXW1-4_BG.png');
+      }
+      // 手機圖片位置
+      .col-imgBox-2{
+        margin-top: 12.82%;
+        @media screen and (min-width: $mq768) {
+          margin-top: 0;
+        }
+      }
+    }
+    &.P00{
+      background-image: url('../../assets/images/BOXM1-2_BG.png');
+      @media screen and (min-width: $mq480) {
+        background-image: none;
+      }
+      // 手機圖片位置
+      .col-imgBox-2{
+        margin-top: 4.9%;
+        @media screen and (min-width: $mq768) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+// boxBlock02
+  &.boxBlock02{
+    @media screen and (min-width: $mq1200) {
+
+    }
+    // 單數
+    &.P01,&.P03,&.P05{
+      background-image: url('../../assets/images/BOXM1-1_BG.png');
+      @media screen and (min-width: $mq600) {
+        background-image: none;
+      }
+      @media screen and (min-width: $mq768) {
+        background-image: url('../../assets/images/BOXM1-1_BG.png');
+      }
+      @media screen and (min-width: $mq769) {
+        background-image: none;
+      }
+      @media screen and (min-width: $mq1200) {
+        background-image: url('../../assets/images/BOXW1-5_BG.png');
+      }
+    }
+    // 雙數
+    &.P02,&.P04,&.P06{
+      background-image: url('../../assets/images/BOXM1-1_BG.png');
+      @media screen and (min-width: $mq600) {
+        background-image: none;
+      }
+      @media screen and (min-width: $mq768) {
+        background-image: url('../../assets/images/BOXM1-1_BG.png');
+      }
+      @media screen and (min-width: $mq769) {
+        background-image: none;
+      }
+      @media screen and (min-width: $mq1200) {
+        background-image: url('../../assets/images/BOXW1-6_BG.png');
+      }
+    }
+    // 手機圖片位置
+    .col-imgBox{
+      margin-top: 6%;
+      @media screen and (min-width: $mq769) {
+        margin-top: 0;
+      }
+      @media screen and (min-width: $mq1024) {
+
+      }
+    }
+  }
+}
+/*-------------------------*/
+/* 介紹文字
+---------------------------*/
+.articleText {
+  width: 100%;
+  padding: 2rem 0 2rem 0;
+  position: relative;
+  z-index: 5;
+  @media screen and (min-width: $mq768) {
+    margin-top: -4.2rem;
+  }
+  @media screen and (min-width: $mq1200) {
+    padding: 9rem 0 0 0;
+  }
+  // 符號
+  .symbol {
+    @include width(5.2rem , 5.2rem);
+    margin: auto;
+    margin-bottom: 1.5rem;
+    @media screen and (min-width: $mq768) {
+      @include width(7.2rem ,7.2rem);
+    }
+  }
+  // 文字
+  .articleText__txt {
+    color: $black;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 3% 0 0;
+    word-break: break-all;
+    font-weight: $font-weight-regular;
+    @media screen and (min-width: $mq768) {
+      @include fontSize(2rem , 1.8);
+      padding: 0 ;
+      text-align: center;
+    }
+  }
+  // 文案第二區
+  &.secondary{
+    padding: 2rem 0 2rem 0;
+    background-color: #e3e3e3;
+    @media screen and (min-width: $mq768) {
+
+    }
+    @media screen and (min-width: $mq1200) {
+      background-color: transparent;
+      padding: 5.5rem 0 5.5rem 0;
+    }
+    .articleText__txt{
+      text-align: left;
+      @media screen and (min-width: $mq768) {
+        @include fontSize(1.6rem , 1.8);
+      }
+    }
+  }
+  // 文案第三區
+  &.thirdly{
+    background-color: $white;
+    @media screen and (min-width: $mq768) {
+
+    }
+    .articleText__txt{
+      @media screen and (min-width: $mq768) {
+        @include fontSize(2rem , 1.8);
+      }
+    }
+  }
+}
+// 目錄清單
+.listDirectory{
+  padding: 1rem 0rem; 
+  // padding: 1rem 2.5rem 0 5rem;
+  // @media screen and (min-width: $mq360) {
+  //   padding: 1rem 2.5rem 0 6rem;
+  // }
+  // @media screen and (min-width: $mq375) {
+  //   padding: 1rem 2.5rem 0 8rem;
+  // }
+  // @media screen and (min-width: $mq414) {
+  //   padding: 1rem 2.5rem 0 9rem;
+  // }
+  // @media screen and (min-width: $mq768) {
+  //   padding: 0;
+  // }
+  @media screen and (min-width: $mq1200) {
+    padding-bottom: 2.5rem;
+  }
+  // li
+  &__list{
+    margin-bottom: 2rem;
+    @media screen and (min-width: $mq768) {
+      width: 19rem;
+      margin-bottom: 0;
+    }
+    @media screen and (min-width: $mq1200) {
+
+    }
+    // 最後一個 li
+    &:last-child{
+      margin-bottom: 0rem;
+    }
+  }
+  // 圖片
+  &__icon{
+    @include width(4.2rem , 4.2rem);
+    margin: 0;
+    margin-right: 1rem;
+    @media screen and (min-width: $mq768) {
+      @include width(7rem , 7rem);
+      margin: auto;
+      margin-bottom: 2rem;
+    }
+  }
+  // 連結
+  &__link{
+    height: auto;
+    color: $black;
+    font-weight: $font-weight-regular;
+    @media screen and (min-width: $mq768) {
+      width: 100%;
+      padding: 0rem 2rem;
+      text-align: center;
+    }
+    @media screen and (min-width: $mq1024) {
+      padding: 0rem 3rem;
+    }
+    @media screen and (min-width: $mq1200) {
+      @include fontSize(2rem , 1.5);
+      line-height: 1.5;
+    }
+  }
+  &__link:hover{
+    color: $primary;
+  }
+  //第二個連結 padding
+  &__link02{
+    @media screen and (min-width: $mq1200) {
+      // padding: 0rem 3rem;
+    }
+  }
+}
+/*-------------------------*/
+/* contentGroup
+---------------------------*/
+.contentGroup{
+  width: 100%;
+  // 標題圖片
+}
+/* contentTitle
+-------------------*/
+.mainTitle{
+  .numberImg{
+    &.numberImg01{
+      @media screen and (min-width: $mq1200) {
+
+      }
+    }
+    &.numberImg02{
+      @media screen and (min-width: $mq1200) {
+        padding-left: 8.3333%;
+      }
+    }
+  }
+  // contentTitle 副標 h2 
+  h2.contentTitle{
+    text-align: left;
+  }
+  // span
+  .contentTitle__text {
+    @include fontSize(7.5vw , 1.6); // 7.5vw 6.4rem
+    @include width(100% , 0rem); // 6.4rem
+    letter-spacing: 0.5rem;
+    border-radius: 3.2rem;
+    display: inline-block;
+    color: $black;
+    background-color: transparent;
+    font-weight: 400;
+    z-index: 5;
+    padding: 0 ;
+    @media screen and (min-width: $mq768) {
+      @include fontSize(4.8rem , 1.6);
+      height: auto;
+      padding: 0 2.5rem;
+    }
+    @media screen and (min-width: $mq1024) {
+      // width: 60rem;
+    }
+      // span-long 第二區
+    &.width-long {
+      @include fontSize(4.7vw , 6.4rem);
+      letter-spacing: 0rem;
+      @media screen and (min-width: $mq768) {
+        @include fontSize(4.2vw , 6.4rem);
+      }
+      @media screen and (min-width: $mq1024) {
+        @include fontSize(3.6rem , 1.8);
+        width: auto;
+      }
+    }
+  }
+  // 綴字
+  .suffix{
+    @media screen and (min-width: $mq768) {
+      padding: 0 2.5rem;
+    }
+    @media screen and (min-width: $mq1024) {
+      width: 100%;
+    }
+  }
+  // 引言 p段落
+  p.foreWord{
+    text-align: justify;
+    font-weight: 400;
+    line-height: 1.7;
+    margin: auto;
+    @media screen and (min-width: $mq768) {
+      @include fontSize(1.8rem ,1.7);
+      text-align: left;
+    }
+    @media screen and (min-width: $mq1200) {
+      padding: 0;
+    }
+  }
+  // contentSubTitle 副標 h3 
+  h3.contentSubTitle{
+    @include fontSize(5.5vw , 1.5);
+    color: $secondary;
+    border-bottom: 0.2rem solid $secondary;
+    @media screen and (min-width: $mq768) {
+      @include fontSize(2.8rem , 1.5);
+    }
+  }
+  .subTitle__icon{
+    @include width(4.6rem , 4.6rem);
+    margin-left: 1rem;
+    @media screen and (min-width: $mq768) {
+
+    }
+  }
+  // 副標第二區
+  &.secondary{
+    .outer{
+      position: relative;
+      left: -24%;
+      @media screen and (min-width: $mq1200) {
+        left: 0%;
+      }
+    }
+    .contentTitle{
+      @media screen and (min-width: $mq1200) {
+        position: absolute;
+        top: 6rem;
+        left: -19rem;
+      }
+    }
+    .suffix01{
+      @media screen and (min-width: $mq1200) {
+        position: absolute;
+        top: 14rem;
+        left: -1rem;
+      }
+    }
+  }
+}
+/* contentBody
+-------------------*/
+.contentBody{
+  padding-top: 0rem; // 3rem
+  margin-bottom: 6rem; 
+  @media screen and (min-width: $mq768) {
+    padding-top: 0rem;
+    margin-bottom: 5rem;// 5rem
+  }
+  @media screen and (min-width: $mq1200) {
+    margin-bottom: 0rem; //4.5rem
+  }
+  // 第二區 有相接文案的 尺寸距離比較少
+  &.contentBody-sm{
+    margin-bottom: 3rem;
+    @media screen and (min-width: $mq768) {
+      margin-bottom: 4rem;
+    }
+    @media screen and (min-width: $mq1200) {
+      margin-bottom: 4.5rem;
+    }
+  }
+}
+// 圖片區塊
+.col-imgBox{
+  z-index: 3;
+  @media screen and (min-width: $mq1200) {
+    // padding-bottom: 5.818rem;
+    padding: 0;
+  }
+  // 破格三欄位
+  &.Break-3{
+    @media screen and (min-width: $mq991) {
+      transform: translateX(calc(-24.9999%));
+    }
+  }
+  h4.productsName{
+    @include fontSize(4.8vw , 1.5);
+    color: $thirdly;
+    @media screen and (min-width: $mq768) {
+      @include fontSize(2.5rem , 1.4);
+    }
+  }
+  .productPic{
+    margin: auto;
+  }
+}
+// 第二區 padding
+.col-imgBox-2{
+  z-index: 3;
+  padding-left: 0;
+  padding-right: 0;
+  @media screen and (min-width: $mq768) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  @media screen and (min-width: $mq1200) {
+    padding-top: calc(565 / 1200 * 100%);
+  }
+  // 破格三欄位
+  &.Break-3{
+    @media screen and (min-width: $mq991) {
+      transform: translateX(calc(-24.9999%));
+    }
+  }
+  h4.productsName{
+    @include fontSize(4.8vw , 1.5);
+    color: $thirdly;
+    @media screen and (min-width: $mq768) {
+      @include fontSize(2.5rem , 1.4);
+    }
+  }
+  // 桌機圖片位置
+  .productPic{
+    margin: auto;
+    @media screen and (min-width: $mq1200) {
+      position: absolute;
+      &.productPic00{
+        top: 3rem;
+        right: 0;
+      }
+      &.productPic01{
+        top: 0;
+        left: 0;
+      }
+      &.productPic02{
+        top: 10.4rem;
+        right: 0;
+      }
+      &.productPic03{
+        top: 3rem;
+        left: 0;
+      }
+      &.productPic04{
+        top: 3.7rem;
+        right: 0;
+      }
+      &.productPic05{
+        position: relative;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}
+// 文字區塊
+.col-txtBox{
+  z-index: 10;
+  position: relative;
+  @media screen and (min-width: $mq320) {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  @media screen and (min-width: $mq480) {
+    border: 0.1rem solid $gray-400;
+    border-radius: 0rem;
+  }
+  @media screen and (min-width: $mq1200) {
+    border: 0rem solid $gray-400;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+  }
+  // 破格一欄位
+  &.Break-1{
+    @media screen and (min-width: $mq1200) {
+      transform: translateX(calc(-8.3333%));
+    }
+  }
+  //右邊邊框縣
+  &.borderLeft{
+    @media screen and (min-width: $mq1024) {
+      border-right: 1.5rem solid $primary ;
+    }
+  }
+  h3,h4,p,li {
+    text-align: justify;
+    @media screen and (min-width: $mq768) {
+
+    }
+  }
+  // 文案主標 h3
+  h3 {
+    @include fontSize(6vw , 1.5);
+    width: 100%;
+    text-align: left;
+    font-weight: 700;
+    // letter-spacing: 0.1rem;
+    color: $text-primary;
+    border-bottom: 0.1rem solid $primary;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    @media screen and (min-width: $mq768) {
+      @include fontSize(3rem , 1.5);
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+    @media screen and (min-width: $mq1024) {
+      text-align: left;
+      border-bottom: 0rem solid $primary;
+      padding-bottom: 0.5rem;
+    }
+  }
+  // 內容群組
+  .productContent{
+    padding-right: 0;
+    @media screen and (min-width: $mq1200) {
+      padding-right: 0rem; // 4.5rem
+    }
+  }
+  // 商品介紹 h4 
+  h4.productTitle{
+    @include fontSize(2rem , 1.5);
+    font-weight: 400;
+    @media screen and (min-width: $mq768) {
+      @include fontSize(2.5rem , 1.5);
+    }
+  }
+  p,li {
+    line-height:1.7;
+    color: $text-primary;
+    @media screen and (min-width: $mq1200) {
+
+    }
+  }
+}
+/*-------------------------*/
+/* Btn
+---------------------------*/
+.Btn {
+  background-color: $thirdly;
+  text-align: center;
+  transition: background-color .3s;
+  // border-radius: 0.5rem;
+  @media screen and (min-width: $mq768) {
+    // border-radius: 0 0 2rem 2rem;
+  }
+  @media screen and (min-width: $mq1200) {
+    position:absolute;
+    bottom: 0;
+    right: 0.4rem;
+  }
+  // &:hover{
+  //   background-color: $primary;
+  // }
+  a {
+    @include fontSize(2.4rem , 1.5);
+    width: 100%;
+    padding: 0.75rem 5rem;
+    display: block;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    @media screen and (min-width: $mq768) {
+      @include fontSize(2.8rem , 1.5);
+      padding: 1.75rem 5rem;
+    }
+    @media screen and (min-width: $mq1024) {
+      @include fontSize(2.8rem , 1.5);
+      padding: 0.75rem 5rem;
+    }
+  }
+}
+/*-------------------------*/
+/* back
+---------------------------*/
+.topBack {
+  @include width(5rem , 5rem);
+  position: fixed;
+  color: #fff;
+  border-radius: 50%;
+  background-color: $thirdly;
+  bottom: 6rem;
+  right: 1.5vw;
+  z-index: 99;
+  opacity: 0;
+  &:hover{
+    cursor: pointer;
+  }
+  &::before {
+    content: "▲";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+  }
+}

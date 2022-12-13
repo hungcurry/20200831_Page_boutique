@@ -1,0 +1,159 @@
+/*-------------------------*/
+/* custom utility
+---------------------------*/
+
+// 關鍵字
+.keyword {
+  color: $primary !important;
+}
+.keyword-lg {
+  font-size: 4rem !important;
+  @media screen and (min-width: $mq768) {
+    font-size: 5.5rem !important;
+  }
+}
+// 文案註解
+p.supplement{
+  // color: #a64059 !important;
+  color: #10436d !important;
+  @media screen and (min-width: $mq1200) {
+    color: #0c497a !important;
+  }
+}
+/* custom ul li
+-------------------*/
+//文案ul / li清單
+ul{
+  width: 100%;
+  color: $black;
+  &.specification{
+    color: $text-secondary;
+  }
+}
+li{
+  line-height: 1.7;
+  color: $text-secondary;
+  text-align: left;
+  @media screen and (min-width: $mq768) {
+
+  }
+  &.title{
+    margin-left: -1.5rem;
+  }
+  &.number{
+    list-style: decimal;
+    color: $text-secondary;
+  }
+  &.disc{
+    color: $text-secondary;
+  }
+}
+li.disc:before{
+  @include width(0.4rem , 0.4rem);
+  position: absolute;
+  top: 1.5rem;
+  left: -1.5rem;
+  border-radius: 50%;
+  display: inline-block;
+  content:"";
+  background-color:$black ;
+}
+li.disc.text-lg-secondary:before{
+  @media screen and (min-width: $mq1200) {
+    background-color: $secondary;
+  }
+}
+//右半邊圓角
+.picBorder-right{
+  border-radius: 0 2.5rem 2rem 0;
+  @media screen and (min-width: $mq768) {
+    border-radius: 0 4rem 4rem 0;
+  }
+}
+//左半邊圓角
+.picBorder-left{
+  border-radius: 2.5rem 0 0 2rem ;
+  @media screen and (min-width: $mq768) {
+    border-radius: 4rem 0 0 4rem ;
+  }
+}
+// 桌機文字白色
+.text-lg-white{
+  @media screen and (min-width: $mq1200) {
+    color: $white !important;
+  }
+}
+// 桌機文字次色
+.text-lg-secondary{
+  @media screen and (min-width: $mq1200) {
+    color: $secondary!important;
+  }
+}
+.text-lg-secondary-2{
+  color: $thirdly !important;
+  @media screen and (min-width: $mq1200) {
+    color: $secondary!important;
+  }
+}
+/* customSpacing
+-------------------*/
+
+// 正向工具 --padding
+.pt-xl-20{
+  @media screen and (min-width: $mq1200) {
+    padding-top: 10rem !important;
+  }
+}
+.pt-xl-21{
+  @media screen and (min-width: $mq1200) {
+    padding-top: 10.7rem !important;
+  }
+}
+.pt-xl-24{
+  @media screen and (min-width: $mq1200) {
+    padding-top: 12.1rem !important;
+  }
+}
+.pt-xl-28{
+  @media screen and (min-width: $mq1200) {
+    padding-top: 14rem !important;
+  }
+}
+.pb-xl-10{
+  @media screen and (min-width: $mq1200) {
+    padding-bottom: 5.3rem !important;
+  }
+}
+.pb-xl-11{
+  @media screen and (min-width: $mq1200) {
+    padding-bottom: 5.6rem !important;
+  }
+}
+.pb-xl-14{
+  @media screen and (min-width: $mq1200) {
+    padding-bottom: 7rem !important;
+  }
+}
+// 正向工具 --margin
+.mb-xl-15{
+  @media screen and (min-width: $mq1200) {
+    margin-bottom: 7.5rem !important;
+  }
+}
+// 正向工具 --offset
+.pl-offset-2{
+  @media screen and (min-width: $mq1200) {
+    padding-left: 16.6666% !important;
+  }
+}
+// 負向工具 --margin
+.mt-xl-n16{
+  @media screen and (min-width: $mq1200) {
+    margin-top: -8rem !important;
+  }
+}
+.mt-xl-n27{
+  @media screen and (min-width: $mq1200) {
+    margin-top: -13.5rem !important;
+  }
+}
